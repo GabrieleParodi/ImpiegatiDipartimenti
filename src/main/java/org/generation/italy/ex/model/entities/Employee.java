@@ -2,22 +2,30 @@ package org.generation.italy.ex.model.entities;
 
 import java.time.LocalDate;
 
-public class Impiegato {
+public class Employee {
     private long id;
     private String firstname;
     private String lastname;
     private LocalDate hireDate;
-    private char Sex;
-
-    public Impiegato(){
+    private String sex;
+    private Department department;
+    public Employee(){
 
     }
-    public Impiegato(long id, String firstname, String lastname, LocalDate hireDate, char sex) {
+    public Employee(long id, String firstname, String lastname, LocalDate hireDate, String sex) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.hireDate = hireDate;
-        Sex = sex;
+        this.sex = sex;
+    }
+    public Employee(long id, String firstname, String lastname, LocalDate hireDate, String sex, Department department) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.hireDate = hireDate;
+        this.sex = sex;
+        this.department = department;
     }
 
     public long getId() {
@@ -36,7 +44,15 @@ public class Impiegato {
         return hireDate;
     }
 
-    public char getSex() {
-        return Sex;
+    public String getSex() {
+        return sex;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

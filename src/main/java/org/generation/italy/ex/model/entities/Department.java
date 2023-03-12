@@ -1,16 +1,28 @@
 package org.generation.italy.ex.model.entities;
 
-public class Dipartimento {
-    private Long id;
+import java.util.Set;
+
+public class Department {
+    private long id;
     private String name;
     private String address;
     private int maxCapacity;
+    private Set<Employee> setEmployee;
 
-    public Dipartimento(Long id, String name, String address, int maxCapacity) {
+    public Department(){
+    }
+    public Department(long id, String name, String address, int maxCapacity) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.maxCapacity = maxCapacity;
+    }
+    public Department(long id, String name, String address, int maxCapacity, Set<Employee> setEmployee) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.maxCapacity = maxCapacity;
+        this.setEmployee = setEmployee;
     }
 
     public Long getId() {
@@ -27,5 +39,16 @@ public class Dipartimento {
 
     public int getMaxCapacity() {
         return maxCapacity;
+    }
+
+    public Set<Employee> getSetEmployee() {
+        return setEmployee;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void addEmployee(Employee e){
+        setEmployee.add(e);
     }
 }
